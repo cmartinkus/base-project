@@ -1,16 +1,19 @@
 FROM python:3.12-slim
 
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-
 WORKDIR /app
 
-COPY requirements.txt .
+# Install uv
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+
+# Copy workspace files
+COPY pyproject.toml uv.lock ./
+
 COPY common ./common
+COPY api_service ./api_service
 
-RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install ../common
+# Install dependencies from lock file
+RUN uv sync --frozen --package api_service
 
-COPY . .
+EXPOSE 8000
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uv","run","--package", "api_service","uvicorn","api_service.main:app","--host","0.0.0.0","--port","8000"]

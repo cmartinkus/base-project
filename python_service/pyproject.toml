@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 
 [project]
-name = "company-python-service"
+name = "python_service"
 version = "0.1.0"
 description = "Background processing service"
 requires-python = ">=3.12"
