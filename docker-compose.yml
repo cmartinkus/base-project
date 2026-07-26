@@ -1,6 +1,11 @@
 version: "3.9"
 
 services:
+  ui:
+    build: ./ui
+    env_file:
+      - .env
+    restart: unless-stopped
   python-service:
     build: ./python-service
     env_file:
