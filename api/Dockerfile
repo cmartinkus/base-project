@@ -6,8 +6,10 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 COPY requirements.txt .
+COPY common ./common
 
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install ../common
 
 COPY . .
 

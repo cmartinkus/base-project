@@ -1,0 +1,26 @@
+[build-system]
+requires = [
+    "setuptools>=68",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "basic-common"
+version = "0.1.0"
+description = "Shared utilities for backend services"
+requires-python = ">=3.12"
+
+dependencies = [
+    "pydantic>=2.0",
+    "pydantic-settings>=2.0",
+    "pika>=1.3",
+    "sqlalchemy>=2.0",
+]
+
+
+[tool.setuptools.packages.find]
+where = [
+    "src"
+]

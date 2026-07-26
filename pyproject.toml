@@ -1,0 +1,7 @@
+[tool.uv.workspace]
+
+members = [
+    "common",
+    "api-service",
+    "python-service",
+]
