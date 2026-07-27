@@ -1,8 +1,8 @@
-from app.database.session import SessionLocal
+from database.session import SessionLocal
 from fastapi import Depends
 from sqlalchemy.orm import Session
-from app.services.user_service import UserService
-from app.repositories.user_repository import UserRepository
+from services.user_service import UserService
+from repositories.user_repository import UserRepository
 
 def get_db():
 

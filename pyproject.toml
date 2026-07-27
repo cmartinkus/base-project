@@ -11,6 +11,6 @@ dependencies = [
 
 members = [
     "common",
-    "api-service",
-    "python-service",
+    "api",
+    "python_service",
 ]

@@ -37,12 +37,9 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 where = [
-    "src"
+    "app"
 ]
 
 
 [tool.uv.sources]
-basic-common = {
-    path = "../common",
-    editable = true
-}
+basic-common = {workspace = true, editable = true}
