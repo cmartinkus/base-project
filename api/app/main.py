@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 from app.api.router import router
-from api.app.config import configure_logging
+from common.config.logging_config import configure_logging
 from common.messaging.rabbitmq import RabbitMQClient
 from common.messaging.exchanges import (
     COMMANDS_EXCHANGE,

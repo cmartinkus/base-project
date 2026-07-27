@@ -4,7 +4,7 @@ logger = logging.getLogger(__name__)
 
 from apscheduler.schedulers.blocking import BlockingScheduler
 
-from app.config.settings import settings
+from common.config.settings import settings
 from app.jobs.job_1 import Job1
 
 

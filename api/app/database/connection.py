@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 
-from app.config.settings import settings
+from common.config.settings import settings
 
 '''
 pool_pre_ping automatically checks if a pooled connection 

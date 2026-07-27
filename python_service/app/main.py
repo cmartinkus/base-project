@@ -1,7 +1,7 @@
 import logging
 
-from app.config.settings import settings
-from app.config.logging_config import configure_logging
+from common.config.settings import settings
+from common.config.logging_config import configure_logging
 from app.scheduler.scheduler import ServiceScheduler
 
 
