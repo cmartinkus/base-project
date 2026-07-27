@@ -16,6 +16,6 @@ CREATE TABLE IF NOT EXISTS app_schema.users (
     email VARCHAR(100) UNIQUE
 );
 
-INSERT INTO users (name, email) VALUES ('John Doe', 'john@example.com');
-INSERT INTO users (name, email) VALUES ('Jane Smith', 'jane@example.com');
-INSERT INTO users (name, email) VALUES ('Bob Johnson', 'bob@example.com');
+INSERT INTO app_schema.users (name, email) VALUES ('John Doe', 'john@example.com');
+INSERT INTO app_schema.users (name, email) VALUES ('Jane Smith', 'jane@example.com');
+INSERT INTO app_schema. users (name, email) VALUES ('Bob Johnson', 'bob@example.com');
