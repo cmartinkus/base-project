@@ -11,7 +11,7 @@
       "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
       "@services/*": ["./src/services/*"],
-      "@types/*": ["./src/types/*"]
+      "@types/*": ["./src/types/*"],
     },
 
     // `vue-tsc --build` produces a .tsbuildinfo file for incremental type-checking.

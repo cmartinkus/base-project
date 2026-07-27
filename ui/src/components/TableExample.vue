@@ -11,7 +11,7 @@ let headers = ref([
 ]);
 
 onMounted(() => {
-  fetch('/api/users')
+  fetch('/users')
     .then(response => response.json())
     .then(data => {
       users.value = data;
