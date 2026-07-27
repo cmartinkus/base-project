@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 
 [project]
-name = "api"
+name = "api_service"
 version = "0.1.0"
 description = "FastAPI backend API"
 requires-python = ">=3.12"
@@ -35,9 +35,12 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 where = [
-    "app"
+    "src"
 ]
 
 
 [tool.uv.sources]
-basic-common = { workspace = true, editable = true}
+basic-common = {
+    path = "../common",
+    editable = true
+}

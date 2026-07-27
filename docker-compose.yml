@@ -2,9 +2,7 @@ version: "3.9"
 
 services:
   api:
-    build:
-      context: .
-      dockerfile: api/Dockerfile
+    build: ./api
     ports:
       - "8000:8000"
     env_file:
@@ -22,18 +20,14 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./db/migration/db_init.sql:/docker-entrypoint-initdb.d/db_init.sql
   ui:
-    build:
-      context: ./ui
-      dockerfile: Dockerfile
+    build: ./ui
     ports:
       - "3000:3000"
     env_file:
       - .env
     restart: unless-stopped
   python-service:
-    build:
-      context: .
-      dockerfile: python_service/Dockerfile
+    build: ./python_service
     env_file:
       - .env
     restart: unless-stopped
@@ -46,7 +40,7 @@ services:
       - .env
   worker-service:
     build:
-      context: .
+      context: ./worker_service
       dockerfile: python_service/Dockerfile
     env_file:
       - .env

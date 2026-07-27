@@ -1,5 +1,5 @@
-from repositories.user_repository import UserRepository
-from schemas.users import UserCreate
+from app.repositories.user_repository import UserRepository
+
 
 class UserService:
 
@@ -7,15 +7,24 @@ class UserService:
 
         self.repository = repository
 
-    def create_user(self, user: UserCreate):
+    def create_user(self, request: CreateUserRequest):
 
-        if self.repository.email_exists(user.email):
+        if self.repository.email_exists(request.email):
             raise DuplicateEmailException()
 
-        return self.repository.create(
-            name=user.name,
-            email=user.email,
+        password = hash_password(request.password)
+
+        user = User(
+            name=request.name,
+            email=request.email,
+            password=password,
         )
+
+        self.repository.save(user)
+
+        send_email(user.email)
+
+        return user
 
     def get_users(self):
 

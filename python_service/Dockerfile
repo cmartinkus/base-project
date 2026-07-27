@@ -11,4 +11,4 @@ COPY python_service ./python_service
 
 RUN uv sync --frozen --package python_service
 
-CMD ["uv","run","--package","python_service","python","-m","python_service.app.main"]
+CMD ["uv","run","--package","python_service","python","-m","python_service.main"]

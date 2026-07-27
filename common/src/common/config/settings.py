@@ -1,5 +1,5 @@
 from functools import lru_cache
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
 
@@ -17,6 +17,7 @@ class Settings(BaseSettings):
 
     @property
     def database_url(self):
+
         return (
             f"postgresql+psycopg://"
             f"{self.POSTGRES_USER}:"
