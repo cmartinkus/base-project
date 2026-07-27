@@ -1,6 +1,5 @@
 import logging
-
-from app.processors.processor_1 import Processor1
+from processors.processor_1 import Processor1
 
 logger = logging.getLogger(__name__)
 

@@ -2,6 +2,7 @@ version: "3.9"
 
 services:
   api:
+    image: api:1.0
     build:
       context: .
       dockerfile: api/Dockerfile
@@ -22,6 +23,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./db/migration/db_init.sql:/docker-entrypoint-initdb.d/db_init.sql
   ui:
+    image: ui:1.0
     build:
       context: ./ui
       dockerfile: Dockerfile
@@ -31,6 +33,7 @@ services:
       - .env
     restart: unless-stopped
   python-service:
+    image: python-service:1.0
     build:
       context: .
       dockerfile: python_service/Dockerfile
@@ -45,6 +48,7 @@ services:
     env_file:
       - .env
   worker-service:
+    image: worker-service:1.0
     build:
       context: .
       dockerfile: python_service/Dockerfile

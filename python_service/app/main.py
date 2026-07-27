@@ -2,7 +2,7 @@ import logging
 
 from common.config.settings import settings
 from common.config.logging_config import configure_logging
-from app.scheduler.scheduler import ServiceScheduler
+from scheduler.scheduler import ServiceScheduler
 
 
 def main():

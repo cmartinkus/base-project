@@ -12,7 +12,8 @@ configure_logging()
 
 app = FastAPI()
 
-app.include_router(router)
+app.include_router(router, prefix="/api")
+
 """ 
 @app.on_event("startup")
 def startup():

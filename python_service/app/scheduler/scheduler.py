@@ -1,11 +1,9 @@
 import logging
+from apscheduler.schedulers.blocking import BlockingScheduler
+from common.config.settings import settings
+from jobs.job_1 import Job1
 
 logger = logging.getLogger(__name__)
-
-from apscheduler.schedulers.blocking import BlockingScheduler
-
-from common.config.settings import settings
-from app.jobs.job_1 import Job1
 
 
 class ServiceScheduler:
