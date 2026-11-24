@@ -5,3 +5,4 @@ apscheduler
 pytest
 pytest-mock
 pika
+psycopg-binary
